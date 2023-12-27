@@ -1,5 +1,13 @@
 local plugins = {
   {
+    "neovim/nvim-lspconfig",
+    config = function()
+      require "plugins.configs.lspconfig"
+      require "custom.configs.lspconfig"
+    end,
+  },
+
+  {
     "williamboman/mason.nvim",
     opts = {
       ensure_installed = {
@@ -21,15 +29,19 @@ local plugins = {
   },
 
   {
-    "nvim-telescope/telescope.nvim",
+    "stevearc/conform.nvim",
+    event = { "BufWritePre" },
+    cmd = { "ConformInfo" },
     opts = {
-      defaults = {
-        mappings = {
-          i = {
-            ["<C-j>"] = require("telescope.actions").move_selection_next,
-            ["<C-k>"] = require("telescope.actions").move_selection_previous,
-          },
-        },
+      formatters_by_ft = {
+        lua = { "stylua" },
+        python = { "black" },
+        c = { "clang_format" },
+        cpp = { "clang_format" },
+      },
+      format_on_save = {
+        timeout_ms = 500,
+        lsp_fallback = true,
       },
     },
   },
@@ -54,27 +66,15 @@ local plugins = {
   },
 
   {
-    "neovim/nvim-lspconfig",
-    config = function()
-      require "plugins.configs.lspconfig"
-      require "custom.configs.lspconfig"
-    end,
-  },
-
-  {
-    "stevearc/conform.nvim",
-    event = { "BufWritePre" },
-    cmd = { "ConformInfo" },
+    "nvim-telescope/telescope.nvim",
     opts = {
-      formatters_by_ft = {
-        lua = { "stylua" },
-        python = { "black" },
-        c = { "clang_format" },
-        cpp = { "clang_format" },
-      },
-      format_on_save = {
-        timeout_ms = 500,
-        lsp_fallback = true,
+      defaults = {
+        mappings = {
+          i = {
+            ["<C-j>"] = require("telescope.actions").move_selection_next,
+            ["<C-k>"] = require("telescope.actions").move_selection_previous,
+          },
+        },
       },
     },
   },

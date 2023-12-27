@@ -1,19 +1,56 @@
-local overrides = require "custom.configs.overrides"
-
 local plugins = {
   {
     "williamboman/mason.nvim",
-    opts = overrides.mason,
+    opts = {
+      ensure_installed = {
+        -- lua
+        "lua-language-server",
+        "stylua",
+        -- python
+        "jedi-language-server",
+        "black",
+        "pyright",
+        -- bash
+        "beautysh",
+        "bash-language-server",
+        -- C/C++
+        "clangd",
+        "clang-format",
+      },
+    },
   },
 
   {
     "nvim-telescope/telescope.nvim",
-    opts = overrides.telescope,
+    opts = {
+      defaults = {
+        mappings = {
+          i = {
+            ["<C-j>"] = require("telescope.actions").move_selection_next,
+            ["<C-k>"] = require("telescope.actions").move_selection_previous,
+          },
+        },
+      },
+    },
   },
 
   {
     "nvim-treesitter/nvim-treesitter",
-    opts = overrides.treesitter,
+    opts = {
+      ensure_installed = {
+        "lua",
+        "python",
+        "bash",
+        "cpp",
+        "c",
+      },
+      indent = {
+        enable = true,
+        disable = {
+          "python",
+        },
+      },
+    },
   },
 
   {
@@ -78,11 +115,6 @@ local plugins = {
   {
     "kdheepak/lazygit.nvim",
     cmd = "LazyGit",
-  },
-
-  {
-    "xiyaowong/transparent.nvim",
-    lazy = false,
   },
 }
 

@@ -3,6 +3,11 @@
 local M = {}
 
 M.ui = {
+  statusline = {
+    theme = "default",
+    separator_style = "arrow",
+  },
+
   theme = "gruvbox",
   hl_override = {
     DiffChange = {
@@ -10,8 +15,11 @@ M.ui = {
     },
     Comment = {
       fg = "#bdae93",
+      italic = true,
     },
   },
+
+  transparency = true,
 }
 
 M.plugins = "custom.plugins"

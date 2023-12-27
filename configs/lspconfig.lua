@@ -3,7 +3,7 @@ local on_attach = configs.on_attach
 local capabilities = configs.capabilities
 
 local lspconfig = require "lspconfig"
-local servers = { "jedi_language_server" }
+local servers = { "jedi_language_server", "pyright"}
 
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {

@@ -21,6 +21,7 @@ M.mason = {
     -- python
     "jedi-language-server",
     "black",
+    "pyright",
   },
 }
 

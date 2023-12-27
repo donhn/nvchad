@@ -1,16 +1,19 @@
+local overrides = require "custom.configs.overrides"
+
 local plugins = {
   {
     "williamboman/mason.nvim",
-    opts = {
-      ensure_installed = {
-        -- lua
-        "lua-language-server",
-        "stylua",
-        -- python
-        "jedi-language-server",
-        "black",
-      },
-    },
+    opts = overrides.mason,
+  },
+
+  {
+    "nvim-telescope/telescope.nvim",
+    opts = overrides.telescope,
+  },
+
+  {
+    "nvim-treesitter/nvim-treesitter",
+    opts = overrides.treesitter,
   },
 
   {
@@ -40,7 +43,7 @@ local plugins = {
 
   {
     "xiyaowong/transparent.nvim",
-    lazy=false,
+    lazy = false,
   },
 }
 

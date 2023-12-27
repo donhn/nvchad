@@ -3,7 +3,7 @@
 local M = {}
 
 M.ui = {
-  theme = "gruvbox_light",
+  theme = "gruvbox",
   hl_override = {
     DiffChange = {
       fg = "#fabd2f",

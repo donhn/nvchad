@@ -4,6 +4,9 @@ M.treesitter = {
   ensure_installed = {
     "lua",
     "python",
+    "bash",
+    "cpp",
+    "c",
   },
   indent = {
     enable = true,
@@ -22,6 +25,12 @@ M.mason = {
     "jedi-language-server",
     "black",
     "pyright",
+    -- bash
+    "beautysh",
+    "bash-language-server",
+    -- C/C++
+    "clangd",
+    "clang-format",
   },
 }
 

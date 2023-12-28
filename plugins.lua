@@ -20,7 +20,7 @@ local plugins = {
         "pyright",
         -- bash
         "beautysh",
-        "bash-language-server",
+        "bash-language-server", -- update to latest node.js
         -- C/C++
         "clangd",
         "clang-format",
@@ -38,6 +38,7 @@ local plugins = {
         python = { "black" },
         c = { "clang_format" },
         cpp = { "clang_format" },
+        sh = { "beautysh" },
       },
       format_on_save = {
         timeout_ms = 500,

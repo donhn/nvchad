@@ -25,6 +25,12 @@ M.general = {
       end,
       "LSP formatting",
     },
+
+    ["gf"] = {
+      function()
+        require("telescope.builtin").lsp_document_symbols { symbols = "function" }
+      end,
+    },
   },
 }
 

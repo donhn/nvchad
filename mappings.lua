@@ -5,6 +5,7 @@ M.general = {
     -- ["sv"] = { ":vsplit<CR>", "split viewport vertical" },
     -- ["ss"] = { ":split<CR>", "split viewport horizontal" },
     -- ["sq"] = { ":close<CR>", "close viewport" },
+
     ["sh"] = { "<C-w>h", "viewport left" },
     ["sl"] = { "<C-w>l", "viewport right" },
     ["sk"] = { "<C-w>k", "viewport up" },

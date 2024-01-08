@@ -24,6 +24,8 @@ local plugins = {
         -- C/C++
         "clangd",
         "clang-format",
+        "cmake-language-server",
+        "cmakelang",
       },
     },
   },
@@ -38,6 +40,7 @@ local plugins = {
         python = { "black" },
         c = { "clang_format" },
         cpp = { "clang_format" },
+        cmake = { "cmake_format" },
         sh = { "beautysh" },
       },
       format_on_save = {

@@ -186,10 +186,7 @@ local plugins = {
     --   { "<c-s>", mode = { "c" }, function() require("flash").toggle() end, desc = "Toggle Flash Search" },
     -- },
   },
-}
-
--- Trial plugins
-local trial_plugins = {
+  -- Trial plugins
   {
     "chrisgrieser/nvim-scissors",
     dependencies = "nvim-telescope/telescope.nvim", -- optional
@@ -288,7 +285,5 @@ local trial_plugins = {
     },
   },
 }
-
-table.insert(plugins, trial_plugins)
 
 return plugins

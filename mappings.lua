@@ -32,6 +32,7 @@ M.general = {
         require("telescope.builtin").lsp_document_symbols { symbols = "function" }
       end,
     },
+    ["<leader>td"] = { ":TodoTelescope keywords=TODO<CR>", { desc = "list all project todos" } },
   },
 }
 

@@ -248,7 +248,7 @@ local plugins = {
     event = "VimEnter", -- needed for folds to load in time and comments closed
     keys = {
       {
-        "zm",
+        "zM",
         function()
           require("ufo").closeAllFolds()
         end,
@@ -326,7 +326,7 @@ local plugins = {
       end,
       -- when opening the buffer, close these fold kinds
       -- use `:UfoInspect` to get available fold kinds from the LSP
-      close_fold_kinds = { "imports", "comment" },
+      -- close_fold_kinds = { "imports", "comment" },
       open_fold_hl_timeout = 800,
       fold_virt_text_handler = foldTextFormatter,
     },

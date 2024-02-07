@@ -1,14 +1,17 @@
--- Set relative number on by default.
-vim.opt.number = true
-vim.opt.relativenumber = true
-vim.opt.colorcolumn = "81"
-
--- clipboard loading
 local is_wsl = vim.fn.has "wsl"
 local is_windows = vim.fn.has "win32" or vim.fn.has "win64"
 local is_mac = vim.fn.has "macunix"
 local is_unix = vim.fn.has "unix"
 
+-- Set relative number on by default.
+vim.opt.number = true
+vim.opt.relativenumber = true
+vim.opt.colorcolumn = "81"
+
+-- snippet path
+vim.g.vscode_snippets_path = vim.fn.stdpath "config" .. "/lua/custom/snippets/"
+
+-- clipboard loading
 vim.api.nvim_create_autocmd({ "BufReadPost", "BufNewFile" }, {
   once = true,
   callback = function()

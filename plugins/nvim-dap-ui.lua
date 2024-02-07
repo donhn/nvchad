@@ -1,7 +1,9 @@
 return {
   "rcarriga/nvim-dap-ui",
-  event = "VeryLazy",
-  dependencies = "mfussenegger/nvim-dap",
+  cmd = "DapToggleBreakpoint",
+  dependencies = {
+    "jay-babu/mason-nvim-dap.nvim",
+  },
   config = function()
     local dap = require "dap"
     local dapui = require "dapui"

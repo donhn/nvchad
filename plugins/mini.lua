@@ -1,7 +1,7 @@
 return {
   "echasnovski/mini.nvim",
   version = false,
-  event = "VeryLazy",
+  keys = { "sa", "sd", "sf", "sF", "sH", "sr", "sn" },
   config = function()
     require("mini.surround").setup {
       mappings = {

@@ -2,10 +2,6 @@ local M = {}
 
 M.general = {
   n = {
-    -- ["sv"] = { ":vsplit<CR>", "split viewport vertical" },
-    -- ["ss"] = { ":split<CR>", "split viewport horizontal" },
-    -- ["sq"] = { ":close<CR>", "close viewport" },
-
     ["sh"] = { "<C-w>h", "viewport left" },
     ["sl"] = { "<C-w>l", "viewport right" },
     ["sk"] = { "<C-w>k", "viewport up" },
@@ -37,7 +33,6 @@ M.general = {
 }
 
 M.dap = {
-  plugin = true,
   n = {
     ["<leader>db"] = {
       "<cmd> DapToggleBreakpoint <CR>",
@@ -51,6 +46,18 @@ M.dap = {
       function()
         require("dapui").toggle()
       end,
+      "Toggle DAP UI",
+    },
+  },
+}
+
+M.code_actions = {
+  n = {
+    ["<leader>ca"] = {
+      function()
+        require("actions-preview").code_actions()
+      end,
+      "Preview code action",
     },
   },
 }

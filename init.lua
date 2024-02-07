@@ -4,7 +4,9 @@ vim.opt.relativenumber = true
 vim.opt.colorcolumn = "81"
 
 -- powershell
-if vim.fn.has "win32" or vim.fn.has "win64" then
+local is_wsl2 = os.getenv "WSLENV" ~= nil
+local is_windows = vim.fn.has "win32" or vim.fn.has "win64"
+if is_windows and not is_wsl2 then
   print "Running in Windows environment."
   -- Set shell to powershell.exe
   vim.o.shell = "powershell.exe"

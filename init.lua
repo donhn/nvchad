@@ -5,6 +5,7 @@ vim.opt.colorcolumn = "81"
 
 -- powershell
 if vim.fn.has "win32" or vim.fn.has "win64" then
+  print "Running in Windows environment."
   -- Set shell to powershell.exe
   vim.o.shell = "powershell.exe"
 
@@ -29,5 +30,5 @@ vim.cmd [[
 
 -- Turn off colorcolumn for text files.
 vim.cmd [[
-  au BufRead,BufNewFile *.txt set colorcolumn=0
+  au BufRead,BufNewFile *.{txt,log,*} set colorcolumn=0
 ]]

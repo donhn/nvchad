@@ -1,5 +1,4 @@
 ---@type ChadrcConfig
-
 local M = {}
 
 M.ui = {
@@ -10,6 +9,12 @@ M.ui = {
 
   theme = "gruvbox",
   hl_override = {
+    IndentBlanklineContextChar = {
+      fg = "#d5c4a1",
+    },
+    IndentBlanklineContextStart = {
+      bg = "#282828",
+    },
     DiffChange = {
       fg = "#fabd2f",
     },

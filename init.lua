@@ -4,7 +4,7 @@ vim.opt.relativenumber = true
 vim.opt.colorcolumn = "81"
 
 -- clipboard loading
-local is_wsl2 = vim.fn.has "wsl"
+local is_wsl = vim.fn.has "wsl"
 local is_windows = vim.fn.has "win32" or vim.fn.has "win64"
 local is_mac = vim.fn.has "macunix"
 local is_unix = vim.fn.has "unix"
@@ -12,7 +12,7 @@ local is_unix = vim.fn.has "unix"
 vim.api.nvim_create_autocmd({ "BufReadPost", "BufNewFile" }, {
   once = true,
   callback = function()
-    if is_windows == 1 and not is_wsl2 == 1 then
+    if is_windows == 1 and not is_wsl == 1 then
       print "Using Windows clipboard."
       vim.g.clipboard = {
         copy = {
@@ -35,7 +35,7 @@ vim.api.nvim_create_autocmd({ "BufReadPost", "BufNewFile" }, {
           ["*"] = "pbpaste",
         },
       }
-    elseif is_unix == 1 or is_wsl2 == 1 then
+    elseif is_unix == 1 or is_wsl == 1 then
       if vim.fn.executable "xclip" == 1 then
         vim.g.clipboard = {
           copy = {
@@ -67,7 +67,7 @@ vim.api.nvim_create_autocmd({ "BufReadPost", "BufNewFile" }, {
 })
 
 -- powershell
-if is_windows and not is_wsl2 then
+if is_windows and not is_wsl then
   print "Running in Windows environment."
   -- Set shell to powershell.exe
   vim.o.shell = "powershell.exe"

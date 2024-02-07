@@ -23,13 +23,6 @@ M.general = {
       "LSP formatting",
     },
 
-    ["gf"] = {
-      function()
-        require("telescope.builtin").lsp_document_symbols {
-          symbols = "function",
-        }
-      end,
-    },
     ["<leader>td"] = { ":TodoTelescope keywords=TODO<CR>", "List TODOs" },
     -- TODO: Another command for TodoTelescope but for NOTE or something
   },

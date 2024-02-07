@@ -1,7 +1,11 @@
 return {
   "aznhe21/actions-preview.nvim",
   config = function()
+    local hl = require "actions-preview.highlight"
     require("actions-preview").setup {
+      highlight_command = {
+        hl.delta "delta --no-gitconfig --side-by-side",
+      },
       telescope = {
         sorting_strategy = "ascending",
         layout_strategy = "vertical",

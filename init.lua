@@ -4,7 +4,7 @@ vim.opt.relativenumber = true
 vim.opt.colorcolumn = "81"
 
 -- clipboard loading
-local is_wsl2 = os.getenv "WSLENV" ~= nil
+local is_wsl2 = vim.fn.has "wsl"
 local is_windows = vim.fn.has "win32" or vim.fn.has "win64"
 local is_mac = vim.fn.has "macunix"
 local is_unix = vim.fn.has "unix"
@@ -25,9 +25,6 @@ vim.api.nvim_create_autocmd({ "BufReadPost", "BufNewFile" }, {
         },
       }
     elseif is_mac == 1 then
-      print(is_mac)
-      print "Using Mac clipboard."
-      -- macOS clipboard settings
       vim.g.clipboard = {
         copy = {
           ["+"] = "pbcopy",
@@ -39,7 +36,6 @@ vim.api.nvim_create_autocmd({ "BufReadPost", "BufNewFile" }, {
         },
       }
     elseif is_unix == 1 or is_wsl2 == 1 then
-      print "Using unix clipboard."
       if vim.fn.executable "xclip" == 1 then
         vim.g.clipboard = {
           copy = {

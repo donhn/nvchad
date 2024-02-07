@@ -51,13 +51,17 @@ M.dap = {
   },
 }
 
-M.code_actions = {
+M.lsp = {
   n = {
     ["<leader>ca"] = {
       function()
         require("actions-preview").code_actions()
       end,
       "Preview code action",
+    },
+    ["<leader>fn"] = {
+      "<cmd> Navbuddy<CR>",
+      "Navbuddy",
     },
   },
 }

@@ -4,7 +4,7 @@ local M = {}
 
 M.ui = {
   statusline = {
-    theme = "default",
+    theme = "vscode_colored",
     separator_style = "arrow",
   },
 

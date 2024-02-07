@@ -9,3 +9,4 @@ local dropbar = {
 }
 
 -- return dropbar
+return {}

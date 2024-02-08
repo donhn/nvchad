@@ -96,5 +96,5 @@ vim.cmd [[
 
 -- Turn off colorcolumn for text files.
 vim.cmd [[
-  au BufRead,BufNewFile *.{txt,log,*} set colorcolumn=0
+  au BufRead,BufNewFile *.txt,*.log set colorcolumn=0
 ]]

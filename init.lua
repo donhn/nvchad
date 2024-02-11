@@ -70,10 +70,10 @@ vim.api.nvim_create_autocmd({ "BufReadPost", "BufNewFile" }, {
 })
 
 -- powershell
-if is_windows and not is_wsl then
+if is_windows == 1 and is_wsl == 0 then
   print "Running in Windows environment."
   -- Set shell to powershell.exe
-  vim.o.shell = "powershell.exe"
+  vim.o.shell = "pwsh.exe"
 
   -- Set shellxquote
   vim.o.shellxquote = ""

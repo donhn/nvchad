@@ -23,8 +23,10 @@ M.general = {
       "LSP formatting",
     },
 
+    ["<leader>oc"] = { ":silent !code %<CR>", "Open current file in VS Code", opts = { silent = true } },
+
     ["<leader>td"] = { ":TodoTelescope keywords=TODO<CR>", "List TODOs" },
-    -- TODO: Another command for TodoTelescope but for NOTE or something
+    -- TODO: Another command for TodoTelescope but for NOTE ir something
   },
 }
 

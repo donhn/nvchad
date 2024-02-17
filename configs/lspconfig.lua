@@ -3,7 +3,7 @@ local on_attach = configs.on_attach
 local capabilities = configs.capabilities
 
 local lspconfig = require "lspconfig"
-local servers = { "bashls", "clangd", "jedi_language_server", "pyright", "cmake" }
+local servers = { "bashls", "clangd", "jedi_language_server", "pyright", "cmake", "glslls" }
 
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
